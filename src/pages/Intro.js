@@ -24,7 +24,8 @@ const Intro = (props) => {
       params: {
         amount: 10,
         category: selectedCategory.id,
-        type: "boolean"
+        type: "boolean",
+        encode: "base64"
       }
      })
      .then((response) => {
@@ -43,7 +44,7 @@ const Intro = (props) => {
           <Text style={introPage.bannerText}>Trivia!</Text>
         </View>
         <View style={introPage.container}>
-        <View style={{backgroundColor: '#3949ab', alignItems:'center', margin: 20 }}>
+        <View style={{backgroundColor: '#3949ab', alignItems:'center', margin: 30  }}>
             <CountdownCircleTimer
                 isPlaying={counterFlag}
                 duration={5}

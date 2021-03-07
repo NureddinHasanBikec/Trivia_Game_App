@@ -3,13 +3,22 @@ import {
     View,
     Text,
     SafeAreaView,
+    FlatList,
+    Button
 } from 'react-native';
 
+import { finishPage } from './styles';
+
+import { useSelector } from 'react-redux';
+
 const Finish = (props) => {
+
+    const userScore = useSelector( global => global.score )
+
     return(
         <SafeAreaView style={{flex: 1}}>
-            <View style={{flex: 1}}>
-                <Text>Finish</Text>
+            <View style={finishPage.container}>
+                <Text style={finishPage.text}>Your score is {userScore}</Text>
             </View>
         </SafeAreaView>
     );
