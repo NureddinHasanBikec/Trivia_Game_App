@@ -5,18 +5,18 @@ import {
   Text,
   TouchableOpacity,
   Animated,
-  ClippingRectangle, 
 } from 'react-native';
-import {CategorySelectModal} from '../components';
-import { CountdownCircleTimer } from 'react-native-countdown-circle-timer'
-
+import {CountdownCircleTimer} from 'react-native-countdown-circle-timer'
+import {useDispatch} from 'react-redux';
 import {introPage} from './styles';
 import Axios from 'axios';
+import {CategorySelectModal} from '../components';
 
 const Intro = (props) => {
 
   const [counterFlag, setCounterFlag] = useState(false);
   const [modalFlag, setModalFlag] = useState(false);
+  const dispatch = useDispatch();
 
   const startGame = (selectedCategory) => {
 
@@ -27,9 +27,10 @@ const Intro = (props) => {
         type: "boolean"
       }
      })
-     .then(res => {
-        console.log(res)
-     })
+     .then((response) => {
+        const { data: {results: questions} } = response;
+        dispatch({ type: "SET_QUESTIONS", payload: { questions }});
+     });
 
     setModalFlag(false)
     setCounterFlag(true)
@@ -46,6 +47,7 @@ const Intro = (props) => {
             <CountdownCircleTimer
                 isPlaying={counterFlag}
                 duration={5}
+                onComplete={() => props.navigation.navigate("Questions")}
                 colors={[
                   ['#fff176', 0.4],
                   ['#ba68c8', 0.4],
