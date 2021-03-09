@@ -10,7 +10,8 @@ export const introPage = StyleSheet.create({
   bannerText: {
     fontSize: 100,
     color: 'white',
-    fontFamily: 'Pacifico-Regular'
+    fontFamily: 'Pacifico-Regular',
+    padding: 20
   },
   buttonContainer: {
     backgroundColor: '#fb8c00',
