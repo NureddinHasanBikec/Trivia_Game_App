@@ -26,7 +26,7 @@
   
   |  Game   | Icon | 
   |-------------------|:--------: |
-  |<img src="visuals/QuickTrivia.gif" width="500" height="550"> | <img src="visuals/icon.PNG" width="400" height="300"> |
+  |<img src="visuals/QuickTrivia.gif" width="500" height="600"> | <img src="visuals/icon.PNG" width="350" height="300"> |
 
   ### Built With
 
